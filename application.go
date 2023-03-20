@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/ngonghi/vian-backend/cmd/app"
 	"github.com/ngonghi/vian-backend/cmd/db"
 	"github.com/spf13/cobra"
 	"os"
@@ -15,16 +16,16 @@ var rootCmd = &cobra.Command{
 	},
 }
 
-//var appCmd = &cobra.Command{
-//	Use:   "app",
-//	Short: "App server related",
-//}
-//
-//var appServeCmd = &cobra.Command{
-//	Use:   "serve",
-//	Short: "Run application server",
-//	RunE:  app.Serve,
-//}
+var appCmd = &cobra.Command{
+	Use:   "app",
+	Short: "App server related",
+}
+
+var appServeCmd = &cobra.Command{
+	Use:   "serve",
+	Short: "Run application server",
+	RunE:  app.Serve,
+}
 
 var dbCmd = &cobra.Command{
 	Use:   "db",
@@ -50,8 +51,8 @@ var dbCreateMigrationCmd = &cobra.Command{
 }
 
 func init() {
-	//rootCmd.AddCommand(appCmd)
-	//appCmd.AddCommand(appServeCmd)
+	rootCmd.AddCommand(appCmd)
+	appCmd.AddCommand(appServeCmd)
 	rootCmd.AddCommand(dbCmd)
 	dbCmd.AddCommand(dbMigrateCmd)
 	dbCmd.AddCommand(dbSeedCmd)

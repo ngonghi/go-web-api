@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"github.com/takaaki-mizuno/go-gin-template/config"
+	"github.com/ngonghi/vian-backend/config"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

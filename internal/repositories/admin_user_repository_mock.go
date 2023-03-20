@@ -2,7 +2,6 @@ package repositories
 
 import (
 	"context"
-	"github.com/google/uuid"
 	"github.com/ngonghi/vian-backend/internal/models"
 )
 
@@ -32,6 +31,6 @@ func (repository *MockAdminUserRepository) Save(ctx context.Context, model model
 	return &model, nil
 }
 
-func (repository *MockAdminUserRepository) Delete(ctx context.Context, id uuid.UUID) error {
+func (repository *MockAdminUserRepository) Delete(ctx context.Context, id int64) error {
 	return nil
 }

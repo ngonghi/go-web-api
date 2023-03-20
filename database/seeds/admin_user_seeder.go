@@ -16,7 +16,7 @@ func (seeder *AdminUserSeeder) Execute(context context.Context) error {
 	hashProvider, _ := hash.NewHashProvider()
 	hashedPassword, _ := hashProvider.HashPassword("test")
 	model := &models.AdminUser{
-		Email:    "test@exmample.com",
+		Email:    "test@example.com",
 		Name:     "Test User",
 		Password: hashedPassword,
 		Roles:    "",
